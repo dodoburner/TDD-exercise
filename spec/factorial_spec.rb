@@ -17,9 +17,7 @@ describe 'factorial method' do
     expect(res2).to eq(1)
   end
 
-  it 'raises an exception if the input is not a positive integer' do
-    solver = Solver.new
-    res = solver.factorial(-22)
-    expect{ res }.to raise_exception
-  end
+  it "raises an error when given a negative number" do
+    expect { Solver.new.factorial(-1) }.to raise_error(ArgumentError)
+    end
 end
